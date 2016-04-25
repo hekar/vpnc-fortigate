@@ -48,18 +48,18 @@ If installed, you run this in the same manner you would run the standard `vpnc` 
 
 Not being a fan of NetworkManager, I prefer to run `vpnc` from the shell.
 
-1. Create a configuration file and save it in your home directory "~/.vpnc-default":
+1) Create a configuration file and save it in your home directory "~/.vpnc-default":
 ```
 IPSec gateway my.vpn.gateway
 IPSec ID my.ipsec.id
 IPSec secret mysecret
 ```
 
-2. Start vpnc with the correct configuration file
+2) Start vpnc with the correct configuration file
 ```
 sudo ./vpnc/vpnc ~/.vpnc-default
 ```
 
-3. Disconnect using `sudo ./vpnc/vpnc-disconnect` or `kill -9 <PID>`
+3) Disconnect using `sudo ./vpnc/vpnc-disconnect` or `kill -9 <PID>`
 
-4. Add to $PATH
+4) Add to $PATH
