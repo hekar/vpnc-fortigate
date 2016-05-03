@@ -4,7 +4,7 @@
 
 The revision hosted in this repository is `550`. The latest version can be found at http://svn.unix-ag.uni-kl.de/vpnc/trunk/.
 
-Patch is [here](https://github.com/hekar/vpnc-fortisgate/commit/36f53e3374fbe7dc0d8562cf186cde6974688b18)
+Patch is [here](https://github.com/hekar/vpnc-fortisgate/commit/36f53e3374fbe7dc0d8562cf186cde6974688b18). Patch was original taken from [Fortigate Ipsec Linux Networkmanager](http://www.justdailynotes.com/fortinet/linux/vpn/2015/02/14/Fortigate-IPSec-Linux-NetworkManager/)
 
 ## Quick Install
 
@@ -63,3 +63,7 @@ sudo ./vpnc/vpnc ~/.vpnc-default
 3) Disconnect using `sudo ./vpnc/vpnc-disconnect` or `kill -9 <PID>`
 
 4) Add to $PATH
+
+## Credit
+
+[Tulio Munhoz - JustDailyNotes](http://www.justdailynotes.com/fortinet/linux/vpn/2015/02/14/Fortigate-IPSec-Linux-NetworkManager/) for the patch.
