@@ -1135,7 +1135,7 @@ static struct isakmp_attribute *make_transform_ike(int dh_group, int crypt, int 
 	a->af = isakmp_attr_lots;
 	a->u.lots.length = 4;
 	a->u.lots.data = xallocc(a->u.lots.length);
-	*((uint32_t *) a->u.lots.data) = htonl(28800);
+	*((uint32_t *) a->u.lots.data) = htonl(86400);
 	a = new_isakmp_attribute_16(IKE_ATTRIB_LIFE_TYPE, IKE_LIFE_TYPE_SECONDS, a);
 	a = new_isakmp_attribute_16(IKE_ATTRIB_AUTH_METHOD, auth, a);
 	a = new_isakmp_attribute_16(IKE_ATTRIB_GROUP_DESC, dh_group, a);
@@ -2253,7 +2253,7 @@ static int do_phase2_xauth(struct sa_block *s)
 		for (ap = a; ap && reject == 0; ap = ap->next)
 			switch (ap->type) {
 			case ISAKMP_XAUTH_06_ATTRIB_TYPE:
-				if (ap->af != isakmp_attr_16 || ap->u.attr_16 != 0)
+				if ((ap->af != isakmp_attr_16 || (ap->u.attr_16 != 0)) && (ap->u.attr_16 != 2))
 					reject = ISAKMP_N_ATTRIBUTES_NOT_SUPPORTED;
 				break;
 			case ISAKMP_XAUTH_06_ATTRIB_USER_NAME:
@@ -2531,7 +2531,7 @@ static struct isakmp_attribute *make_transform_ipsec(struct sa_block *s, int dh_
 	a->af = isakmp_attr_lots;
 	a->u.lots.length = 4;
 	a->u.lots.data = xallocc(a->u.lots.length);
-	*((uint32_t *) a->u.lots.data) = htonl(28800);
+	*((uint32_t *) a->u.lots.data) = htonl(86400);
 	a = new_isakmp_attribute_16(ISAKMP_IPSEC_ATTRIB_SA_LIFE_TYPE, IPSEC_LIFE_SECONDS, a);
 
 	if (dh_group)
